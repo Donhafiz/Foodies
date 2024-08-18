@@ -30,7 +30,7 @@ hbs.registerPartials('views/partials')
 
 mongoose.set('strictQuery', true);
 
-mongoose.connect("mongodb://127.0.0.1:27017/restorent",()=>{
+mongoose.connect("mongodb+srv://iddrisuhafiz568:hWHNLOLjVkauQ2hY@foodies.fhgnn.mongodb.net/",()=>{
     console.log("Server connected..");
 })
 app.listen(5656,()=>{
