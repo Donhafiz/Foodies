@@ -1,0 +1,72 @@
+
+<nav class="navbar navbar-expand-lg bg-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/"><img src="/static/image/logo.png" style="height:auto;width:130px" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#counter">About us</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link " href="/foods/1">Explore foods</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i
+              class="fas fa-shopping-basket ps-3"></i><small class="cart-num"></small></a>
+        </li>
+
+
+        {{#if loginUser}}
+        <li class="nav-item"></li>
+        <a class="nav-link " href="/dashboard">{{loginUser.name}}</a>
+        </li>
+        {{else}}
+        <li class="nav-item">
+          <a class="nav-link " href="/register">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/login">Login</a>
+        </li>
+        {{/if}}
+
+        <li class="nav-item">
+          <button class="main-btn">+233 55 9137 611</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel"><img style="width:70px;height:40px" src="/static/image/logo.png" alt=""> Your Food Basket.</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body cart-body">
+      </div>
+      <div class="modal-footer">
+        {{#if loginUser}}
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a href="/user/orderFood" type="button" class="btn btn-primary checkout-btn ">Check out food</a>
+        {{else}}
+        <small class="primary-color">please login for check out food</small>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+</div>
+
