@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    {{> headers }}
+
+</head>
+<body>
+  {{>navbar loginUser=loginUser}}
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container-fluid about-us-section px-5 " >
+  <div class="row">
+    <div class="col-lg-6">
+      <h1 class="display-4 fw-bold mb-4">About Foodies</h1>
+      <p class="lead mb-4">At Foodies, we believe that good food choices lead to good health and a better life.</p>
+      <p class="mb-4">Our mission is to provide delicious, nutritious meals that fuel your body and delight your taste buds. We source the freshest ingredients and craft each dish with care and expertise.</p>
+      <ul class="list-unstyled mb-4">
+        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Farm-fresh ingredients</li>
+        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Expert chefs</li>
+        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Diverse menu options</li>
+        <li><i class="bi bi-check-circle-fill text-success me-2"></i>Health-conscious recipes</li>
+      </ul>
+      <a href="/foods/1" class="btn btn-danger btn-lg">Explore Our Menu</a>
+    </div>
+    <div class="col-lg-6">
+      <img src="/static/image/img/img-1.png" alt="About Foodies" class="img-fluid rounded-3 shadow">
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid bg-light py-5">
+  <div class="row text-center">
+    <div class="col-md-3">
+      <h2 class="display-4 fw-bold text-danger">4568+</h2>
+      <p class="lead">Happy Customers</p>
+    </div>
+    <div class="col-md-3">
+      <h2 class="display-4 fw-bold text-danger">675+</h2>
+      <p class="lead">Daily Orders</p>
+    </div>
+    <div class="col-md-3">
+      <h2 class="display-4 fw-bold text-danger">567+</h2>
+      <p class="lead">Expert Chefs</p>
+    </div>
+    <div class="col-md-3">
+      <h2 class="display-4 fw-bold text-danger">5673+</h2>
+      <p class="lead">Menu Items</p>
+    </div>
+  </div>
+</div>
+
+<div class="container py-5">
+  <div class="row">
+    <div class="col-lg-6">
+      <h2 class="fw-bold mb-4">Our Story</h2>
+      <p>Founded in 2024, Foodies has grown from a small family-owned restaurant to a beloved culinary destination. Our passion for great food and commitment to health has driven us to create a unique dining experience that combines flavor, nutrition, and innovation.</p>
+      <p>Today, we continue to push the boundaries of healthy eating, proving that nutritious food can be both delicious and satisfying.</p>
+    </div>
+    <div class="col-lg-6">
+      <h2 class="fw-bold mb-4">Our Values</h2>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><i class="bi bi-heart-fill text-danger me-2"></i> Passion for Quality</li>
+        <li class="list-group-item"><i class="bi bi-globe text-danger me-2"></i> Sustainability</li>
+        <li class="list-group-item"><i class="bi bi-people-fill text-danger me-2"></i> Community Engagement</li>
+        <li class="list-group-item"><i class="bi bi-lightbulb-fill text-danger me-2"></i> Innovation in Nutrition</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+   {{>footer }}
+
+    
+</body>
+</html>

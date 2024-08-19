@@ -73,9 +73,10 @@ route.post("/loginUser", async (req, res) => {
   }
 });
 
-route.get("/dashboard", (req, res) => {
+route.get("/dashboard", async (req, res) => {
   if (req.session.loginUser) {
     const loginUser = req.session.loginUser;
+    const foodCount = await dish.countDocuments()
     if (req.session.loginUser.type == "normal") {
       console.log("normal user");
       res.render("userPages/userDashboard", {
@@ -85,6 +86,7 @@ route.get("/dashboard", (req, res) => {
       console.log("admin user");
       res.render("adminDashboard", {
         loginUser: loginUser,
+        foodCount: foodCount
       });
     }
   } else
@@ -361,6 +363,12 @@ route.get("/logout", (req, res) => {
     logout: true,
   });
 });
+route.get('/about-us', (req ,res)=>{
+  const loginUser = req.session.loginUser;
+  res.render("userPages/userAboutUs", {
+    loginUser: loginUser,
+  })
+})
 
 //check out
 route.get("/user/orderFood", (req, res) => {
