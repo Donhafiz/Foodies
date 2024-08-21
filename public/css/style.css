@@ -222,34 +222,46 @@ p {
 }
 
 #footer::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -50%;
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle, rgba(220,53,69,0.1) 0%, rgba(26,26,26,0) 70%);
+  background: radial-gradient(
+    circle,
+    rgba(220, 53, 69, 0.1) 0%,
+    rgba(26, 26, 26, 0) 70%
+  );
   animation: pulse 15s infinite;
 }
 
-.footercontent{
+.footercontent {
   position: relative;
   z-index: 10;
 }
 @keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
-#footer h3, #footer h5 {
+#footer h3,
+#footer h5 {
   font-weight: 700;
   position: relative;
   display: inline-block;
 }
 
-#footer h3::after, #footer h5::after {
-  content: '';
+#footer h3::after,
+#footer h5::after {
+  content: "";
   position: absolute;
   left: 0;
   bottom: -5px;
@@ -259,19 +271,20 @@ p {
   transition: width 0.3s ease;
 }
 
-#footer h3:hover::after, #footer h5:hover::after {
+#footer h3:hover::after,
+#footer h5:hover::after {
   width: 100%;
 }
 
 .text-light-50 {
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5);
 }
-.footer-links{
+.footer-links {
   z-index: 100;
 }
 
 .footer-links a {
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.7);
   text-decoration: none;
   transition: color 0.3s ease, transform 0.3s ease;
   display: inline-block;
@@ -299,13 +312,13 @@ p {
 }
 
 #footer .form-control {
-  background-color: rgba(255,255,255,0.1);
+  background-color: rgba(255, 255, 255, 0.1);
   border: none;
   color: #fff;
 }
 
 #footer .form-control::placeholder {
-  color: rgba(255,255,255,0.5);
+  color: rgba(255, 255, 255, 0.5);
 }
 
 #footer hr {
@@ -489,73 +502,74 @@ p {
   width: 100%;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Varela+Round&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Varela+Round&display=swap");
 
-:root{
-    --primary-color:#e40f2b;
-    --secondary-color:#43121d;
-    --white-color:#fff;
-    --text-color:#555;
+:root {
+  --primary-color: #e40f2b;
+  --secondary-color: #43121d;
+  --white-color: #fff;
+  --text-color: #555;
 }
 
 /* Your original CSS styles */
-.primary-color{
-    color:var(--primary-color)
+.primary-color {
+  color: var(--primary-color);
 }
-.text-color{
-    color:var(--text-color)
+.text-color {
+  color: var(--text-color);
 }
 *,
 *:after,
-*:before{
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: "Nunito", sans-serif;
+*:before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Nunito", sans-serif;
 }
 
 :active,
 :hover,
-:focus{
-    outline-offset: 0;
-    outline: 0;
+:focus {
+  outline-offset: 0;
+  outline: 0;
 }
 
 a,
-a:hover{
-    text-decoration: none;
+a:hover {
+  text-decoration: none;
 }
-a:hover{
-    color: var(--primary-color);
+a:hover {
+  color: var(--primary-color);
 }
 
 ul,
-ol{
-    margin: 0;
-    padding:0;
+ol {
+  margin: 0;
+  padding: 0;
 }
-html{
-    scroll-behavior: smooth;
+html {
+  scroll-behavior: smooth;
 }
 
-body{
-    font-size: 100%;
-    font-weight: 400;
+body {
+  font-size: 100%;
+  font-weight: 400;
 }
-input:focus{
-    border:1px solid var(--primary-color) !important;
-    box-shadow: 0px 0px 1px var(--primary-color) inset,0px 0px 8px var(--primary-color) !important;
+input:focus {
+  border: 1px solid var(--primary-color) !important;
+  box-shadow: 0px 0px 1px var(--primary-color) inset,
+    0px 0px 8px var(--primary-color) !important;
 }
 /* custome scrollbar*/
-::-webkit-scrollbar{
-    width:0.625rem;
+::-webkit-scrollbar {
+  width: 0.625rem;
 }
-::-webkit-scrollbar-track{
-    background:var(--white-color);
+::-webkit-scrollbar-track {
+  background: var(--white-color);
 }
-::-webkit-scrollbar-thumb{
-    background:var(--primary-color);
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
 }
 
 /* ... (rest of your original CSS) ... */
@@ -566,7 +580,7 @@ input:focus{
   height: calc(100% - 150px);
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   background-color: var(--white-color);
@@ -646,7 +660,8 @@ input:focus{
   background-color: var(--secondary-color);
 }
 
-.user-message, .ai-message {
+.user-message,
+.ai-message {
   max-width: 80%;
   padding: 10px;
   margin: 5px 0;
@@ -679,7 +694,7 @@ input:focus{
   height: 60px;
   font-size: 1rem;
   cursor: pointer;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
   z-index: 999;
 }
@@ -694,7 +709,7 @@ input:focus{
     right: 5%;
     left: 5%;
   }
-  
+
   .chat-bubble {
     right: 10px;
   }
