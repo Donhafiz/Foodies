@@ -5,19 +5,20 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Foodies</title>
-    {{> headers }}
+  {{> headers }}
 </head>
 
 <body>
   {{>navbar loginUser=loginUser}}
-  
+
   <section id="/">
     <div class="container-fluid px-0 top-banner">
       <div class="container">
         <div class="row">
           <div class="col-lg-5 col-md-6">
             <h1>Good Food Choice Are Good Health...</h1>
-            <p>Fuel Your Body with Flavorful Delights! Discover Good Health through Great Food Choices. Order Now and Taste the Difference!</p>
+            <p>Fuel Your Body with Flavorful Delights! Discover Good Health through Great Food Choices. Order Now and
+              Taste the Difference!</p>
             <div class="mt-4">
               <button class="main-btn">Order now <i class="fas fa-shopping-basket ps-3"></i></button>
               {{!-- <button class="white-btn">Order now <i class="fas fa-angle-right ps-3"></i></button> --}}
@@ -81,7 +82,8 @@
     <div class="row">
       <div class="col-md-5 mt-md-5 pt-md-5">
         <h2>We Make Everything By Hand With The Best Possible Ingredients.</h2>
-        <p>Fuel Your Body with Flavorful Delights! Discover Good Health through Great Food Choices. Order Now and Taste the Difference!</p>
+        <p>Fuel Your Body with Flavorful Delights! Discover Good Health through Great Food Choices. Order Now and Taste
+          the Difference!</p>
         <div class="checks">
           <span><i class="fa fa-check"></i> Calories: XXX kcal per serving.</span><br>
           <span><i class="fa fa-check"></i> Carbohydrates: XXg.</span><br>
@@ -99,46 +101,38 @@
     <section class="container my-5">
       <div class="text-center mx-md-5 px-md-5">
         <h2 class="pb-0 mb-0">Explore Our Foods</h2>
-        <p>Embark on a Culinary Journey with Us! Explore our curated selection of mouthwatering dishes, each crafted with the finest ingredients and bursting with flavor. Whether you’re craving something savory, sweet, or a bit of both, our diverse menu has something to satisfy every palate. From timeless classics to innovative new creations, every dish is a celebration of taste. Dive in, discover your new favorite, and let every bite transport you to a world of culinary delight.</p>
+        <p>Embark on a Culinary Journey with Us! Explore our curated selection of mouthwatering dishes, each crafted
+          with the finest ingredients and bursting with flavor. Whether you’re craving something savory, sweet, or a bit
+          of both, our diverse menu has something to satisfy every palate. From timeless classics to innovative new
+          creations, every dish is a celebration of taste. Dive in, discover your new favorite, and let every bite
+          transport you to a world of culinary delight.</p>
       </div>
-      <div class="row my-5 ">
-        <div class="col-md-4">
-          <div class="card ">
-            <img src="/static/image/img/img-3.jpg" class="img-fluid mb-2" alt="">
-            <h4>Rainbow Vegetable Sandwich</h4>
-            <p class="text-color">Time : 15-20 Minutes | Server 1</p>
-            <h2 class="primary-color mb-3"> <i class="fa fa-usd"></i>10.50 <del class="text-muted"><i
-                  class="fa fa-usd"></i>11.70</del></h2>
-            <div>
-              <button class="main-btn">Order Now</button>
+      <div class="row my-2">
+        {{#each foods}}
+        <div class="col-md-4 my-5">
+          <div class="card">
+            <img style="height:210px" src="/static/dishImage/{{this.photo}}" class="img-fluid mb-2" alt="">
+            <h4>{{this.dname}}</h4>
+            <p class="text-color">Time : {{this.dtime}} Minutes | Serve {{this.dserve}}</p>
+            <h2 class="primary-color mb-3"> <i class="fa fa-usd"></i>Gh&#8373; {{#discount this.dprice
+              this.ddiscount}}{{/discount}} <del class="text-muted"><i class="fa fa-usd"></i> {{this.dprice}}</del></h2>
+            <div style=" display: flex; justify-content: space-between; padding: 7px;">
+              <div>
+                <button onclick="addFoodToBasket('{{this._id}}','{{this.dname}}','{{this.dprice}}','{{this.photo}}' )"
+                  class="main-btn">Add To Basket</button>
+              </div>
+              <div>
+                <a href="/create-payment-intent/{{this._id}}" class="main-btn">Order</a>
+
+              </div>
+
             </div>
+
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card ">
-            <img src="/static/image/img/img-4.jpg" class="img-fluid mb-2" alt="">
-            <h4>Vegeterian Burger</h4>
-            <p class="text-color">Time : 30-35 Minutes | Server 1</p>
-            <h2 class="primary-color mb-3"> <i class="fa fa-usd"></i>9.50 <del class="text-muted"><i
-                  class="fa fa-usd"></i>10.50</del></h2>
-            <div>
-              <button class="main-btn">Order Now</button>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card ">
-            <img src="/static/image/img/img-5.jpg" class="img-fluid mb-2" alt="">
-            <h4>Raspberry Stuffed French Toast</h4>
-            <p class="text-color">Time : 15-20 Minutes | Server 1</p>
-            <h2 class="primary-color mb-3"> <i class="fa fa-usd"></i>7.30 <del class="text-muted"><i
-                  class="fa fa-sd"></i>10.70</del></h2>
-            <div>
-              <button class="main-btn">Order Now</button>
-            </div>
-          </div>
-        </div>
+        {{/each}}
       </div>
+
     </section>
   </section>
 
@@ -166,7 +160,8 @@
             <img style="width:150px;height:auto; border-radius:50%" src="/static/image/review/review-4.jpg" alt="...">
             <div class="my-4">
               <h4 class="">Tahiru Rabiu</h4>
-              <p class="text-light">Amazing experience! The food was fresh, hot, and full of flavor. Highly recommend the Hamburger. Keep up the great work!..</p>
+              <p class="text-light">Amazing experience! The food was fresh, hot, and full of flavor. Highly recommend
+                the Hamburger. Keep up the great work!..</p>
             </div>
           </div>
 
@@ -196,11 +191,11 @@
           <form action="">
             <div class="row">
               <div class="col-md-4 offset-md-3 ">
-                          <input class="mt-1 form-control" type="text" placeholder="Enter Email Id...">
+                <input class="mt-1 form-control" type="text" placeholder="Enter Email Id...">
               </div>
-               <div class="col-md-2 mt-2 ">
-                       <button class="main-btn">Subscribe</button>
-            </div>
+              <div class="col-md-2 mt-2 ">
+                <button class="main-btn">Subscribe</button>
+              </div>
             </div>
           </form>
         </div>
@@ -209,8 +204,8 @@
   </section>
 
 
-   {{>footer }}
- 
+  {{>footer }}
+
 </body>
 
 </html>

@@ -12,10 +12,13 @@ const fs = require("fs");
 const stripe = require("stripe")(
   "sk_test_51PgQfgFkhb9tzNw0FI6EmkkY8yfupNBcnrsk1PA7l0aupJGIUqRbdI9g6Sq5rScWeYQn4jK6zCjkzSGHw2Qd4K0800sN6G439T"
 );
-route.get("/", (req, res) => {
+route.get("/", async(req, res) => {
   const loginUser = req.session.loginUser;
+  const foods = await dish.find().sort({_id: -1}).limit(3);
+  console.log("foods",foods)
   res.render("index", {
     loginUser: loginUser,
+    foods: foods,
   });
 });
 route.get("/register", (req, res) => {

@@ -1,3 +1,3 @@
 start http:localost:5656
 
-npm start
+npm run dev
